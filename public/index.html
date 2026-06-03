@@ -331,7 +331,7 @@
     position: fixed;
     inset: 0;
     z-index: 10000;
-    background: #4A5A35;
+    background: #3D4A28;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -340,16 +340,15 @@
   }
   #intro-screen.hidden { display: none; }
 
-  /* Imagen del sobre — contiene el sobre completo */
+  /* Imagen del sobre a pantalla completa */
   .env-img {
-    position: relative;
-    z-index: 1;
-    max-width: 92vw;
-    max-height: 75vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
   }
   #intro-screen:hover .env-img {
     transform: scale(1.02);
