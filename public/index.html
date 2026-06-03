@@ -340,18 +340,19 @@
   }
   #intro-screen.hidden { display: none; }
 
-  /* Imagen del sobre a pantalla completa */
+  /* Imagen del sobre — contiene el sobre completo */
   .env-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+    position: relative;
+    z-index: 1;
+    max-width: 92vw;
+    max-height: 75vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
   }
   #intro-screen:hover .env-img {
-    transform: scale(1.015);
+    transform: scale(1.02);
   }
 
   /* Hint centrado abajo */
@@ -372,15 +373,15 @@
   }
   @keyframes hintFade { to { opacity: 1; } }
 
-  /* Pulso alrededor del sello — centrado en el sello que está en el centro horizontal, ~55% vertical */
+  /* Pulso sobre el sello */
   .env-pulse {
     position: absolute;
-    top: 53%; left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    width: min(160px, 22vw);
+    width: min(120px, 14vw);
     aspect-ratio: 1;
     border-radius: 50%;
-    border: 1.5px solid rgba(220,215,180,0.5);
+    border: 1.5px solid rgba(220,215,180,0.55);
     animation: sealPulse 2.8s ease-in-out 1.5s infinite;
     pointer-events: none;
     z-index: 2;
@@ -537,7 +538,7 @@
     <div class="text-center mb-lg">
       <span class="section-label" style="color:var(--gold-light)">Confirmación de asistencia</span>
       <h2 class="section-title" style="color:var(--dark)">¿Venís a la boda?</h2>
-      <p class="section-desc" style="color:rgba(255,255,255,0.5)">Por favor, confirma tu asistencia antes del <strong style="color:var(--gold-light)">5 de abril de 2027</strong>.</p>
+      <p class="section-desc" style="color:var(--gold)">Por favor, confirma tu asistencia antes del<br><strong style="color:var(--gold)">5 de junio de 2027</strong></p>
     </div>
     <div class="rsvp-card" style="background:rgba(255,255,255,0.88);border-radius:10px">
       <div id="rsvpSuccess" class="form-success">
@@ -702,7 +703,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">¿Cuándo tengo que confirmar la asistencia?</span><span class="faq-icon">+</span></button>
-        <p class="faq-a">Necesitamos vuestra confirmación antes del 5 de abril de 2027. Esto nos ayuda a organizar el catering, los autobuses y la disposición de mesas con tiempo suficiente.</p>
+        <p class="faq-a">Necesitamos vuestra confirmación antes del 5 de junio de 2027. Esto nos ayuda a organizar el catering, los autobuses y la disposición de mesas con tiempo suficiente.</p>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">¿Cómo llego al Cortijo Curiel?</span><span class="faq-icon">+</span></button>
