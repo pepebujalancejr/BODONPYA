@@ -411,7 +411,7 @@
 <!-- ═══ VERSIÓN MÓVIL (solo pantallas ≤ 768px) ═══ -->
 <style>
   @font-face { font-family: "Caveat"; src: url("/fonts/Caveat.ttf") format("truetype"); font-weight: 400 700; font-display: swap; }
-  #m-app, #m-defs { display: none; }
+  #m-app { display: none; }
   @media (max-width: 768px) {
     /* Ocultar la web de escritorio en el móvil */
     body > nav, body > .mobile-menu, body > section, body > footer, body > .lightbox { display: none !important; }
@@ -451,7 +451,8 @@
     /* Portada */
     #m-inicio { padding: 0 0 2rem; }
     #m-inicio .m-arch { margin-top: 1.6rem; }
-    .m-home { position: relative; width: 100%; max-width: 420px; margin: -1.2rem auto 0; aspect-ratio: 360 / 600; }
+    .m-home { position: relative; width: 100%; max-width: 420px; margin: -.6rem auto 0; }
+    .m-home::before { content: ""; display: block; padding-top: 166.667%; }
     .m-home svg.m-stem { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
     .m-link {
       position: absolute; transform: translate(-50%, -50%); font-family: 'Caveat', cursive; font-weight: 600;
@@ -461,7 +462,7 @@
       -webkit-tap-highlight-color: transparent;
     }
     .m-link:active { color: #C4973E; }
-    .m-countdown { text-align: center; font-family: 'Caveat', cursive; font-size: 1.35rem; color: #8A7E72; margin-top: .3rem; }
+    .m-countdown { text-align: center; font-family: 'Caveat', cursive; font-size: 1.35rem; color: #8A7E72; margin: -.7rem 0 1.4rem; position: relative; z-index: 3; }
     .m-countdown b { color: #C4973E; font-weight: 600; font-size: 1.6rem; }
     .m-hint { text-align: center; font-family: 'Jost', sans-serif; font-size: .62rem; letter-spacing: .3em; text-transform: uppercase; color: #A79C8C; margin-top: .8rem; }
 
@@ -472,7 +473,12 @@
     .m-addr { display: inline-block; font-size: 1.05rem; color: #6E6457; text-decoration: underline; text-decoration-color: rgba(110,100,87,.45); text-underline-offset: 3px; line-height: 1.5; }
     .m-time { font-size: 1.25rem; color: #C4973E; margin-top: .4rem; font-weight: 600; }
     .m-note { font-size: 1.05rem; color: #6E6457; line-height: 1.55; font-style: italic; }
-    .m-deco { position: absolute; z-index: 1; pointer-events: none; opacity: .95; }
+    .m-deco { position: absolute; z-index: 1; pointer-events: none; opacity: .95; overflow: visible; }
+    .m-page:not(#m-inicio) { padding-bottom: 13rem; }
+    .m-tr { right: -46px; top: 74px; width: 150px; transform: rotate(122deg); }
+    .m-tl { left: -56px; top: 300px; width: 130px; transform: scaleX(-1) rotate(108deg); opacity: .85; }
+    .m-br { right: -38px; bottom: 120px; width: 150px; transform: rotate(-38deg); }
+    .m-bl { left: -4px; bottom: 0; width: 120px; }
 
     .m-sched { list-style: none; max-width: 330px; margin: 0 auto; position: relative; z-index: 2; }
     .m-sched li { display: grid; grid-template-columns: 4.2rem 1fr; gap: .8rem; padding: .7rem 0; border-bottom: 1px dashed rgba(92,107,58,.25); }
@@ -843,14 +849,9 @@
 </footer>
 
 <!-- ═══ VERSIÓN MÓVIL (solo pantallas ≤ 768px) ═══ -->
-<svg id="m-defs" width="0" height="0" aria-hidden="true" style="position:absolute">
+<svg id="m-defs" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden;pointer-events:none">
   <defs>
     <path id="m-arc" d="M48,150 A132,132 0 0 1 312,150" />
-    <filter id="m-wc" x="-15%" y="-15%" width="130%" height="130%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="n" />
-      <feDisplacementMap in="SourceGraphic" in2="n" scale="1.5" result="d" />
-      <feDropShadow in="d" dx="0" dy="1" stdDeviation="1.1" flood-color="#5a5640" flood-opacity="0.2" />
-    </filter>
     <!-- Cala blanca (base en 30,100) -->
     <symbol id="m-cala" viewBox="0 0 60 100" overflow="visible">
       <path d="M30,100 C20,92 10,74 11,52 C12,32 22,14 46,4 C40,20 44,36 50,52 C56,70 46,90 30,100Z" fill="#FFFEFA" stroke="#9FA58A" stroke-width="1.1" />
@@ -869,15 +870,15 @@
     <path id="m-lf" d="M0,0 C9,-5.5 28,-5 38,0 C28,5 9,5.5 0,0Z" />
     <symbol id="m-olivo" viewBox="0 0 200 90" overflow="visible">
       <path d="M4,72 C50,64 110,46 196,14" stroke="#7A6E55" stroke-width="2.2" fill="none" stroke-linecap="round" />
-      <use href="#m-lf" transform="translate(30,66) rotate(-48)" fill="#7F8F62" />
-      <use href="#m-lf" transform="translate(42,64) rotate(22)" fill="#A9B48E" />
-      <use href="#m-lf" transform="translate(70,58) rotate(-52)" fill="#A9B48E" />
-      <use href="#m-lf" transform="translate(84,54) rotate(14)" fill="#7F8F62" />
-      <use href="#m-lf" transform="translate(110,46) rotate(-58)" fill="#7F8F62" />
-      <use href="#m-lf" transform="translate(124,41) rotate(8)" fill="#A9B48E" />
-      <use href="#m-lf" transform="translate(150,32) rotate(-62)" fill="#A9B48E" />
-      <use href="#m-lf" transform="translate(163,27) rotate(0)" fill="#7F8F62" />
-      <use href="#m-lf" transform="translate(186,18) rotate(-22)" fill="#7F8F62" />
+      <use href="#m-lf" xlink:href="#m-lf" transform="translate(30,66) rotate(-48)" fill="#7F8F62" />
+      <use href="#m-lf" xlink:href="#m-lf" transform="translate(42,64) rotate(22)" fill="#A9B48E" />
+      <use href="#m-lf" xlink:href="#m-lf" transform="translate(70,58) rotate(-52)" fill="#A9B48E" />
+      <use href="#m-lf" xlink:href="#m-lf" transform="translate(84,54) rotate(14)" fill="#7F8F62" />
+      <use href="#m-lf" xlink:href="#m-lf" transform="translate(110,46) rotate(-58)" fill="#7F8F62" />
+      <use href="#m-lf" xlink:href="#m-lf" transform="translate(124,41) rotate(8)" fill="#A9B48E" />
+      <use href="#m-lf" xlink:href="#m-lf" transform="translate(150,32) rotate(-62)" fill="#A9B48E" />
+      <use href="#m-lf" xlink:href="#m-lf" transform="translate(163,27) rotate(0)" fill="#7F8F62" />
+      <use href="#m-lf" xlink:href="#m-lf" transform="translate(186,18) rotate(-22)" fill="#7F8F62" />
       <ellipse cx="62" cy="72" rx="4.6" ry="6" fill="#56612F" />
       <ellipse cx="100" cy="60" rx="4.6" ry="6" fill="#7B8A45" />
       <ellipse cx="141" cy="45" rx="4.6" ry="6" fill="#56612F" />
@@ -887,16 +888,16 @@
     <!-- Flor de azahar -->
     <path id="m-pet" d="M0,-2 C-5,-8 -4,-16 0,-17 C4,-16 5,-8 0,-2Z" fill="#FFFFFF" stroke="#B9BCA4" stroke-width=".7" />
     <symbol id="m-azahar" viewBox="-20 -20 40 40" overflow="visible">
-      <use href="#m-pet" /><use href="#m-pet" transform="rotate(72)" /><use href="#m-pet" transform="rotate(144)" />
-      <use href="#m-pet" transform="rotate(216)" /><use href="#m-pet" transform="rotate(288)" />
+      <use href="#m-pet" xlink:href="#m-pet" /><use href="#m-pet" xlink:href="#m-pet" transform="rotate(72)" /><use href="#m-pet" xlink:href="#m-pet" transform="rotate(144)" />
+      <use href="#m-pet" xlink:href="#m-pet" transform="rotate(216)" /><use href="#m-pet" xlink:href="#m-pet" transform="rotate(288)" />
       <circle r="2.8" fill="#E8C556" />
     </symbol>
     <!-- Ramillete de azahar con botones -->
     <symbol id="m-ramillete" viewBox="0 0 60 60" overflow="visible">
       <path d="M30,58 C30,45 22,35 14,26 M30,46 C34,36 42,28 48,20" stroke="#6F8048" stroke-width="1.4" fill="none" />
-      <use href="#m-lf" transform="translate(30,50) rotate(-130) scale(.55)" fill="#7F8F62" />
-      <use href="#m-azahar" x="2" y="12" width="24" height="24" />
-      <use href="#m-azahar" x="36" y="6" width="22" height="22" />
+      <use href="#m-lf" xlink:href="#m-lf" transform="translate(30,50) rotate(-130) scale(.55)" fill="#7F8F62" />
+      <use href="#m-azahar" xlink:href="#m-azahar" x="2" y="12" width="24" height="24" />
+      <use href="#m-azahar" xlink:href="#m-azahar" x="36" y="6" width="22" height="22" />
       <ellipse cx="24" cy="38" rx="3" ry="4.5" fill="#FFFFFF" stroke="#B9BCA4" stroke-width=".6" />
       <ellipse cx="40" cy="34" rx="2.6" ry="4" fill="#FFFFFF" stroke="#B9BCA4" stroke-width=".6" />
     </symbol>
@@ -908,35 +909,30 @@
   <!-- PORTADA -->
   <section class="m-page active" id="m-inicio">
     <svg class="m-arch" viewBox="0 0 360 165" aria-label="Adriana y Pepe, 5 de junio de 2027">
-      <text class="names"><textPath href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text>
+      <text class="names"><textPath href="#m-arc" xlink:href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text>
       <text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text>
     </svg>
+    <p class="m-countdown">Faltan <b id="m-days">--</b> días</p>
     <div class="m-home">
       <svg class="m-stem" viewBox="0 0 360 600" aria-hidden="true">
-        <g filter="url(#m-wc)">
+        <g>
           <!-- tallos -->
           <path d="M180,600 C177,520 185,430 179,340 C173,250 183,170 180,100" stroke="#6F8048" stroke-width="3.2" fill="none" stroke-linecap="round" />
           <path d="M179,345 C168,300 156,258 148,216" stroke="#6F8048" stroke-width="2.4" fill="none" stroke-linecap="round" />
           <path d="M180,410 C192,370 205,338 214,300" stroke="#6F8048" stroke-width="2.4" fill="none" stroke-linecap="round" />
           <path d="M179,500 C170,470 160,448 150,420" stroke="#6F8048" stroke-width="2" fill="none" stroke-linecap="round" />
           <!-- olivo -->
-          <g transform="translate(178,238) rotate(-8)"><use href="#m-olivo" width="70" height="32" /></g>
-          <g transform="translate(182,392) rotate(-14)"><use href="#m-olivo" width="84" height="38" /></g>
-          <g transform="translate(176,548) scale(-1,1) rotate(-4)"><use href="#m-olivo" width="74" height="34" /></g>
+          <g transform="translate(178,238) rotate(-8)"><use href="#m-olivo" xlink:href="#m-olivo" width="70" height="32" /></g>
+          <g transform="translate(182,392) rotate(-14)"><use href="#m-olivo" xlink:href="#m-olivo" width="84" height="38" /></g>
+          <g transform="translate(176,548) scale(-1,1) rotate(-4)"><use href="#m-olivo" xlink:href="#m-olivo" width="74" height="34" /></g>
           <!-- hojas de cala -->
-          <g transform="rotate(-30 180 598)"><use href="#m-hoja" x="160" y="490" width="40" height="108" /></g>
-          <g transform="rotate(26 180 598)"><use href="#m-hoja" x="162" y="502" width="36" height="96" /></g>
+          <g transform="rotate(-30 180 598)"><use href="#m-hoja" xlink:href="#m-hoja" x="160" y="490" width="40" height="108" /></g>
+          <g transform="rotate(26 180 598)"><use href="#m-hoja" xlink:href="#m-hoja" x="162" y="502" width="36" height="96" /></g>
           <!-- calas -->
-          <use href="#m-cala" x="146" y="-12" width="68" height="113" />
-          <g transform="rotate(-12 148 218)"><use href="#m-cala" x="123" y="134" width="50" height="84" /></g>
-          <g transform="rotate(12 214 302)"><use href="#m-cala" x="189" y="218" width="50" height="84" /></g>
-          <g transform="rotate(-14 150 422)"><use href="#m-cala" x="128" y="349" width="44" height="74" /></g>
-          <!-- azahar -->
-          <use href="#m-ramillete" x="186" y="128" width="40" height="40" />
-          <use href="#m-ramillete" x="150" y="300" width="34" height="34" />
-          <use href="#m-ramillete" x="190" y="452" width="38" height="38" />
-          <use href="#m-azahar" x="196" y="520" width="18" height="18" />
-          <use href="#m-azahar" x="150" y="168" width="14" height="14" />
+          <use href="#m-cala" xlink:href="#m-cala" x="146" y="-12" width="68" height="113" />
+          <g transform="rotate(-12 148 218)"><use href="#m-cala" xlink:href="#m-cala" x="123" y="134" width="50" height="84" /></g>
+          <g transform="rotate(12 214 302)"><use href="#m-cala" xlink:href="#m-cala" x="189" y="218" width="50" height="84" /></g>
+          <g transform="rotate(-14 150 422)"><use href="#m-cala" xlink:href="#m-cala" x="128" y="349" width="44" height="74" /></g>
         </g>
       </svg>
       <button class="m-link" style="left:19%;top:22%" onclick="mGo('llegar')">Cómo llegar</button>
@@ -946,22 +942,25 @@
       <button class="m-link" style="left:19%;top:72%" onclick="mGo('regalo')">Lista<br>de bodas</button>
       <button class="m-link" style="left:80.5%;top:82%" onclick="mGo('preguntas')">Preguntas</button>
     </div>
-    <p class="m-countdown">Faltan <b id="m-days">--</b> días</p>
     <p class="m-hint">Catedral de Málaga · Cortijo Curiel</p>
   </section>
 
   <!-- CÓMO LLEGAR -->
   <section class="m-page" id="m-llegar">
     <button class="m-back" onclick="mBack()" aria-label="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg></button>
-    <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
-    <svg class="m-deco" viewBox="0 0 80 260" style="left:-14px;top:150px;width:92px" aria-hidden="true"><g filter="url(#m-wc)"><path d="M42,260 C40,200 36,150 34,92" stroke="#6F8048" stroke-width="2.6" fill="none"/><g transform="rotate(-22 34 96)"><use href="#m-cala" x="4" y="-4" width="60" height="100"/></g><g transform="rotate(-18 42 258)"><use href="#m-hoja" x="22" y="158" width="40" height="100"/></g></g></svg>
+    <svg class="m-deco m-tr" viewBox="0 0 200 90" aria-hidden="true"><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90" /></svg>
+    <svg class="m-deco m-br" viewBox="0 0 200 90" aria-hidden="true"><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90" /></svg>
+    <svg class="m-deco m-bl" viewBox="0 0 140 240" aria-hidden="true"><g><path d="M58,240 C56,200 52,160 48,112" stroke="#6F8048" stroke-width="2.6" fill="none"/><path d="M60,240 C68,205 80,180 98,150" stroke="#6F8048" stroke-width="2.2" fill="none"/><path d="M56,240 C46,215 34,198 20,178" stroke="#6F8048" stroke-width="2" fill="none"/><g transform="rotate(-6 48 114)"><use href="#m-cala" xlink:href="#m-cala" x="19" y="18" width="58" height="96" /></g><g transform="rotate(20 98 152)"><use href="#m-cala" xlink:href="#m-cala" x="76" y="88" width="44" height="72" /></g><g transform="rotate(-28 20 180)"><use href="#m-cala" xlink:href="#m-cala" x="2" y="126" width="36" height="58" /></g><g transform="rotate(-38 58 238)"><use href="#m-hoja" xlink:href="#m-hoja" x="40" y="150" width="34" height="90" /></g><g transform="rotate(30 58 238)"><use href="#m-hoja" xlink:href="#m-hoja" x="42" y="162" width="30" height="78" /></g></g></svg>
+    
+    <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" xlink:href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
+    <svg class="m-deco" viewBox="0 0 80 260" style="left:-14px;top:150px;width:92px" aria-hidden="true"><g><path d="M42,260 C40,200 36,150 34,92" stroke="#6F8048" stroke-width="2.6" fill="none"/><g transform="rotate(-22 34 96)"><use href="#m-cala" xlink:href="#m-cala" x="4" y="-4" width="60" height="100"/></g><g transform="rotate(-18 42 258)"><use href="#m-hoja" xlink:href="#m-hoja" x="22" y="158" width="40" height="100"/></g></g></svg>
     <div class="m-block" style="margin-top:.6rem">
       <p class="m-h">Ceremonia</p>
       <p class="m-place">Catedral de Málaga</p>
       <a class="m-addr" href="https://maps.google.com/?q=Catedral+de+Malaga" target="_blank">Calle Molina Lario, 9<br>29015 Málaga</a>
       <p class="m-time">17:00 h</p>
     </div>
-    <svg class="m-deco" viewBox="0 0 200 90" style="right:-18px;top:520px;width:150px;transform:rotate(-24deg)" aria-hidden="true"><g filter="url(#m-wc)"><use href="#m-olivo" width="200" height="90"/></g></svg>
+    <svg class="m-deco" viewBox="0 0 200 90" style="right:-18px;top:520px;width:150px;transform:rotate(-24deg)" aria-hidden="true"><g><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90"/></g></svg>
     <div class="m-block">
       <p class="m-h">Celebración</p>
       <p class="m-place">Cortijo Curiel</p>
@@ -977,7 +976,11 @@
   <!-- PROGRAMA -->
   <section class="m-page" id="m-programa">
     <button class="m-back" onclick="mBack()" aria-label="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg></button>
-    <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
+    <svg class="m-deco m-tr" viewBox="0 0 200 90" aria-hidden="true"><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90" /></svg>
+    <svg class="m-deco m-br" viewBox="0 0 200 90" aria-hidden="true"><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90" /></svg>
+    <svg class="m-deco m-bl" viewBox="0 0 140 240" aria-hidden="true"><g><path d="M58,240 C56,200 52,160 48,112" stroke="#6F8048" stroke-width="2.6" fill="none"/><path d="M60,240 C68,205 80,180 98,150" stroke="#6F8048" stroke-width="2.2" fill="none"/><path d="M56,240 C46,215 34,198 20,178" stroke="#6F8048" stroke-width="2" fill="none"/><g transform="rotate(-6 48 114)"><use href="#m-cala" xlink:href="#m-cala" x="19" y="18" width="58" height="96" /></g><g transform="rotate(20 98 152)"><use href="#m-cala" xlink:href="#m-cala" x="76" y="88" width="44" height="72" /></g><g transform="rotate(-28 20 180)"><use href="#m-cala" xlink:href="#m-cala" x="2" y="126" width="36" height="58" /></g><g transform="rotate(-38 58 238)"><use href="#m-hoja" xlink:href="#m-hoja" x="40" y="150" width="34" height="90" /></g><g transform="rotate(30 58 238)"><use href="#m-hoja" xlink:href="#m-hoja" x="42" y="162" width="30" height="78" /></g></g></svg>
+    <svg class="m-deco m-tl" viewBox="0 0 200 90" aria-hidden="true"><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90" /></svg>
+    <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" xlink:href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
     <p class="m-title">Programa</p>
     <ul class="m-sched">
       <li><span class="t">16:30</span><div><p class="e">Llegada de invitados</p><p class="d">Catedral de Málaga</p></div></li>
@@ -991,13 +994,16 @@
       <li><span class="t">03:15</span><div><p class="e">Fin de la fiesta</p></div></li>
       <li><span class="t">04:00</span><div><p class="e">Último autobús de vuelta</p></div></li>
     </ul>
-    <svg class="m-deco" viewBox="0 0 60 60" style="right:6px;top:205px;width:54px" aria-hidden="true"><g filter="url(#m-wc)"><use href="#m-ramillete" width="60" height="60"/></g></svg>
   </section>
 
   <!-- CONFIRMACIÓN -->
   <section class="m-page" id="m-confirmacion">
     <button class="m-back" onclick="mBack()" aria-label="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg></button>
-    <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
+    <svg class="m-deco m-tr" viewBox="0 0 200 90" aria-hidden="true"><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90" /></svg>
+    <svg class="m-deco m-br" viewBox="0 0 200 90" aria-hidden="true"><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90" /></svg>
+    <svg class="m-deco m-bl" viewBox="0 0 140 240" aria-hidden="true"><g><path d="M58,240 C56,200 52,160 48,112" stroke="#6F8048" stroke-width="2.6" fill="none"/><path d="M60,240 C68,205 80,180 98,150" stroke="#6F8048" stroke-width="2.2" fill="none"/><path d="M56,240 C46,215 34,198 20,178" stroke="#6F8048" stroke-width="2" fill="none"/><g transform="rotate(-6 48 114)"><use href="#m-cala" xlink:href="#m-cala" x="19" y="18" width="58" height="96" /></g><g transform="rotate(20 98 152)"><use href="#m-cala" xlink:href="#m-cala" x="76" y="88" width="44" height="72" /></g><g transform="rotate(-28 20 180)"><use href="#m-cala" xlink:href="#m-cala" x="2" y="126" width="36" height="58" /></g><g transform="rotate(-38 58 238)"><use href="#m-hoja" xlink:href="#m-hoja" x="40" y="150" width="34" height="90" /></g><g transform="rotate(30 58 238)"><use href="#m-hoja" xlink:href="#m-hoja" x="42" y="162" width="30" height="78" /></g></g></svg>
+    <svg class="m-deco m-tl" viewBox="0 0 200 90" aria-hidden="true"><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90" /></svg>
+    <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" xlink:href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
     <p class="m-title">Confirmación</p>
     <p class="m-note" style="text-align:center;margin:-.6rem 0 1.6rem">Por favor, confirmad antes del<br><b style="color:#C4973E">5 de junio de 2027</b></p>
     <div id="m-rsvp-slot"></div>
@@ -1006,9 +1012,12 @@
   <!-- ALOJAMIENTOS -->
   <section class="m-page" id="m-alojamientos">
     <button class="m-back" onclick="mBack()" aria-label="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg></button>
-    <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
+    <svg class="m-deco m-tr" viewBox="0 0 200 90" aria-hidden="true"><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90" /></svg>
+    <svg class="m-deco m-br" viewBox="0 0 200 90" aria-hidden="true"><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90" /></svg>
+    <svg class="m-deco m-bl" viewBox="0 0 140 240" aria-hidden="true"><g><path d="M58,240 C56,200 52,160 48,112" stroke="#6F8048" stroke-width="2.6" fill="none"/><path d="M60,240 C68,205 80,180 98,150" stroke="#6F8048" stroke-width="2.2" fill="none"/><path d="M56,240 C46,215 34,198 20,178" stroke="#6F8048" stroke-width="2" fill="none"/><g transform="rotate(-6 48 114)"><use href="#m-cala" xlink:href="#m-cala" x="19" y="18" width="58" height="96" /></g><g transform="rotate(20 98 152)"><use href="#m-cala" xlink:href="#m-cala" x="76" y="88" width="44" height="72" /></g><g transform="rotate(-28 20 180)"><use href="#m-cala" xlink:href="#m-cala" x="2" y="126" width="36" height="58" /></g><g transform="rotate(-38 58 238)"><use href="#m-hoja" xlink:href="#m-hoja" x="40" y="150" width="34" height="90" /></g><g transform="rotate(30 58 238)"><use href="#m-hoja" xlink:href="#m-hoja" x="42" y="162" width="30" height="78" /></g></g></svg>
+    <svg class="m-deco m-tl" viewBox="0 0 200 90" aria-hidden="true"><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90" /></svg>
+    <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" xlink:href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
     <p class="m-title">Alojamientos</p>
-    <svg class="m-deco" viewBox="0 0 200 90" style="right:-72px;top:250px;width:170px;transform:rotate(-70deg)" aria-hidden="true"><g filter="url(#m-wc)"><use href="#m-olivo" width="200" height="90"/></g></svg>
     <div class="m-hotel">
       <p class="n">Gran Hotel Miramar</p><p class="s">★★★★★</p>
       <a class="m-addr" href="https://maps.google.com/?q=Gran+Hotel+Miramar+Malaga" target="_blank">Paseo de Reding, Málaga</a><br>
@@ -1035,20 +1044,27 @@
   <!-- LISTA DE BODAS -->
   <section class="m-page" id="m-regalo">
     <button class="m-back" onclick="mBack()" aria-label="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg></button>
-    <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
+    <svg class="m-deco m-tr" viewBox="0 0 200 90" aria-hidden="true"><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90" /></svg>
+    <svg class="m-deco m-br" viewBox="0 0 200 90" aria-hidden="true"><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90" /></svg>
+    <svg class="m-deco m-bl" viewBox="0 0 140 240" aria-hidden="true"><g><path d="M58,240 C56,200 52,160 48,112" stroke="#6F8048" stroke-width="2.6" fill="none"/><path d="M60,240 C68,205 80,180 98,150" stroke="#6F8048" stroke-width="2.2" fill="none"/><path d="M56,240 C46,215 34,198 20,178" stroke="#6F8048" stroke-width="2" fill="none"/><g transform="rotate(-6 48 114)"><use href="#m-cala" xlink:href="#m-cala" x="19" y="18" width="58" height="96" /></g><g transform="rotate(20 98 152)"><use href="#m-cala" xlink:href="#m-cala" x="76" y="88" width="44" height="72" /></g><g transform="rotate(-28 20 180)"><use href="#m-cala" xlink:href="#m-cala" x="2" y="126" width="36" height="58" /></g><g transform="rotate(-38 58 238)"><use href="#m-hoja" xlink:href="#m-hoja" x="40" y="150" width="34" height="90" /></g><g transform="rotate(30 58 238)"><use href="#m-hoja" xlink:href="#m-hoja" x="42" y="162" width="30" height="78" /></g></g></svg>
+    <svg class="m-deco m-tl" viewBox="0 0 200 90" aria-hidden="true"><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90" /></svg>
+    <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" xlink:href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
     <p class="m-title">Lista de bodas</p>
     <div class="m-block">
       <p class="m-gift-txt">Vuestra presencia es el mejor regalo que podéis hacernos. Pero si queréis ayudarnos a empezar nuestra nueva vida juntos, os dejamos nuestro número de cuenta:</p>
       <p class="m-iban" id="m-iban">PENDIENTE CUENTA DE AHORRO</p>
       <button class="m-btn" id="m-copy" onclick="mCopy()">Copiar nº de cuenta</button>
     </div>
-    <svg class="m-deco" viewBox="0 0 120 260" style="left:6px;bottom:10px;width:110px" aria-hidden="true"><g filter="url(#m-wc)"><path d="M50,260 C48,210 46,170 44,118" stroke="#6F8048" stroke-width="2.4" fill="none"/><path d="M48,230 C60,200 72,180 84,150" stroke="#6F8048" stroke-width="2" fill="none"/><g transform="rotate(-8 44 120)"><use href="#m-cala" x="17" y="40" width="54" height="90"/></g><g transform="rotate(18 84 152)"><use href="#m-cala" x="64" y="88" width="40" height="66"/></g><use href="#m-ramillete" x="4" y="170" width="40" height="40"/></g></svg>
   </section>
 
   <!-- PREGUNTAS -->
   <section class="m-page" id="m-preguntas">
     <button class="m-back" onclick="mBack()" aria-label="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg></button>
-    <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
+    <svg class="m-deco m-tr" viewBox="0 0 200 90" aria-hidden="true"><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90" /></svg>
+    <svg class="m-deco m-br" viewBox="0 0 200 90" aria-hidden="true"><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90" /></svg>
+    <svg class="m-deco m-bl" viewBox="0 0 140 240" aria-hidden="true"><g><path d="M58,240 C56,200 52,160 48,112" stroke="#6F8048" stroke-width="2.6" fill="none"/><path d="M60,240 C68,205 80,180 98,150" stroke="#6F8048" stroke-width="2.2" fill="none"/><path d="M56,240 C46,215 34,198 20,178" stroke="#6F8048" stroke-width="2" fill="none"/><g transform="rotate(-6 48 114)"><use href="#m-cala" xlink:href="#m-cala" x="19" y="18" width="58" height="96" /></g><g transform="rotate(20 98 152)"><use href="#m-cala" xlink:href="#m-cala" x="76" y="88" width="44" height="72" /></g><g transform="rotate(-28 20 180)"><use href="#m-cala" xlink:href="#m-cala" x="2" y="126" width="36" height="58" /></g><g transform="rotate(-38 58 238)"><use href="#m-hoja" xlink:href="#m-hoja" x="40" y="150" width="34" height="90" /></g><g transform="rotate(30 58 238)"><use href="#m-hoja" xlink:href="#m-hoja" x="42" y="162" width="30" height="78" /></g></g></svg>
+    <svg class="m-deco m-tl" viewBox="0 0 200 90" aria-hidden="true"><use href="#m-olivo" xlink:href="#m-olivo" width="200" height="90" /></svg>
+    <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" xlink:href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
     <p class="m-title">Preguntas</p>
     <div id="m-faq-slot"></div>
   </section>
