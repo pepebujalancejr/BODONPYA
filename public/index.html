@@ -415,16 +415,18 @@
   @media (max-width: 768px) {
     /* Ocultar la web de escritorio en el móvil */
     body > nav, body > .mobile-menu, body > section, body > footer, body > .lightbox { display: none !important; }
-    body { background: #FAF5EC !important; }
+    body { background: #EFE7D6 !important; }
     body::before, body::after { display: none !important; }
 
     #m-app {
       display: block; position: relative; min-height: 100vh; min-height: 100dvh;
       color: #3D4A27; font-family: 'Cormorant Garamond', Georgia, serif;
-      background-color: #FAF5EC;
+      background-color: #EFE7D6;
+      background-image: linear-gradient(rgba(250,246,238,.38), rgba(250,246,238,.38)), url("/lino.jpg");
+      background-size: auto, 640px auto;
       overflow-x: hidden;
     }
-    .m-page { display: none; position: relative; min-height: 100vh; min-height: 100dvh; padding: 0 1.5rem 3rem; }
+    .m-page { display: none; position: relative; overflow: hidden; min-height: 100vh; min-height: 100dvh; padding: 0 1.5rem 3rem; }
     .m-page.active { display: block; animation: mFade .45s ease; }
     @keyframes mFade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 
@@ -925,9 +927,9 @@
   <!-- CÓMO LLEGAR -->
   <section class="m-page" id="m-llegar">
     <button class="m-back" onclick="mBack()" aria-label="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg></button>
-    <img class="m-img" src="/flores/cala.webp" alt="" style="left:-6px;top:150px;width:62px;transform:rotate(-8deg)" />
-    <img class="m-img" src="/flores/olivo.webp" alt="" style="right:-34px;top:470px;width:120px;transform:rotate(-28deg)" />
-    <img class="m-img" src="/flores/azahar.webp" alt="" style="left:-26px;bottom:0;width:150px" />
+    <img class="m-img" src="/flores/cala.webp" alt="" style="width:50px;transform-origin:47.3% 100%;transform:rotate(32deg);left:-32px;top:136px" />
+    <img class="m-img" src="/flores/azahar.webp" alt="" style="width:125px;transform-origin:61.8% 100%;transform:rotate(42deg);left:-85px;bottom:40px" />
+    <img class="m-img" src="/flores/olivo.webp" alt="" style="width:112px;transform-origin:70.5% 100%;transform:rotate(-40deg);right:-41px;bottom:34px" />
     
     <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" xlink:href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
     <div class="m-block" style="margin-top:.6rem">
@@ -951,9 +953,8 @@
   <!-- PROGRAMA -->
   <section class="m-page" id="m-programa">
     <button class="m-back" onclick="mBack()" aria-label="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg></button>
-    <img class="m-img" src="/flores/olivo.webp" alt="" style="right:-30px;top:-22px;width:92px;transform:rotate(-150deg) scaleX(-1)" />
-    <img class="m-img" src="/flores/azahar.webp" alt="" style="left:-28px;bottom:0;width:150px" />
-    <img class="m-img" src="/flores/olivo.webp" alt="" style="right:-30px;bottom:30px;width:110px;transform:rotate(-24deg)" />
+    <img class="m-img" src="/flores/azahar.webp" alt="" style="width:125px;transform-origin:61.8% 100%;transform:rotate(42deg);left:-85px;bottom:40px" />
+    <img class="m-img" src="/flores/olivo.webp" alt="" style="width:112px;transform-origin:70.5% 100%;transform:rotate(-40deg);right:-41px;bottom:34px" />
     <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" xlink:href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
     <p class="m-title">Programa</p>
     <ul class="m-sched">
@@ -973,9 +974,8 @@
   <!-- CONFIRMACIÓN -->
   <section class="m-page" id="m-confirmacion">
     <button class="m-back" onclick="mBack()" aria-label="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg></button>
-    <img class="m-img" src="/flores/jazmin.webp" alt="" style="right:-30px;top:-26px;width:92px;transform:rotate(200deg)" />
-    <img class="m-img" src="/flores/cala.webp" alt="" style="left:0;bottom:0;width:58px;transform:rotate(-6deg)" />
-    <img class="m-img" src="/flores/olivo.webp" alt="" style="right:-30px;bottom:20px;width:115px;transform:rotate(-24deg)" />
+    <img class="m-img" src="/flores/cala.webp" alt="" style="width:50px;transform-origin:47.3% 100%;transform:rotate(30deg);left:-32px;bottom:30px" />
+    <img class="m-img" src="/flores/olivo.webp" alt="" style="width:112px;transform-origin:70.5% 100%;transform:rotate(-40deg);right:-41px;bottom:34px" />
     <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" xlink:href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
     <p class="m-title">Confirmación</p>
     <p class="m-note" style="text-align:center;margin:-.6rem 0 1.6rem">Por favor, confirmad antes del<br><b style="color:#C4973E">5 de junio de 2027</b></p>
@@ -985,9 +985,8 @@
   <!-- ALOJAMIENTOS -->
   <section class="m-page" id="m-alojamientos">
     <button class="m-back" onclick="mBack()" aria-label="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg></button>
-    <img class="m-img" src="/flores/buganvilla.webp" alt="" style="right:-34px;top:-30px;width:100px;transform:rotate(195deg)" />
-    <img class="m-img" src="/flores/geranio.webp" alt="" style="left:-22px;bottom:0;width:140px" />
-    <img class="m-img" src="/flores/olivo.webp" alt="" style="right:-30px;bottom:30px;width:110px;transform:rotate(-24deg)" />
+    <img class="m-img" src="/flores/geranio.webp" alt="" style="width:125px;transform-origin:41.0% 100%;transform:rotate(40deg);left:-59px;bottom:40px" />
+    <img class="m-img" src="/flores/olivo.webp" alt="" style="width:112px;transform-origin:70.5% 100%;transform:rotate(-40deg);right:-41px;bottom:34px" />
     <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" xlink:href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
     <p class="m-title">Alojamientos</p>
     <div class="m-hotel">
@@ -1016,9 +1015,8 @@
   <!-- LISTA DE BODAS -->
   <section class="m-page" id="m-regalo">
     <button class="m-back" onclick="mBack()" aria-label="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg></button>
-    <img class="m-img" src="/flores/olivo.webp" alt="" style="right:-30px;top:-22px;width:92px;transform:rotate(-150deg) scaleX(-1)" />
-    <img class="m-img" src="/flores/cala.webp" alt="" style="left:14px;bottom:0;width:60px;transform:rotate(-6deg)" />
-    <img class="m-img" src="/flores/jazmin.webp" alt="" style="left:50px;bottom:0;width:150px" />
+    <img class="m-img" src="/flores/cala.webp" alt="" style="width:52px;transform-origin:47.3% 100%;transform:rotate(30deg);left:-33px;bottom:30px" />
+    <img class="m-img" src="/flores/jazmin.webp" alt="" style="width:125px;transform-origin:39.4% 100%;transform:rotate(-38deg);right:-84px;bottom:36px" />
     <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" xlink:href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
     <p class="m-title">Lista de bodas</p>
     <div class="m-block">
@@ -1031,9 +1029,8 @@
   <!-- PREGUNTAS -->
   <section class="m-page" id="m-preguntas">
     <button class="m-back" onclick="mBack()" aria-label="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg></button>
-    <img class="m-img" src="/flores/jazmin.webp" alt="" style="right:-30px;top:-26px;width:92px;transform:rotate(200deg)" />
-    <img class="m-img" src="/flores/olivo.webp" alt="" style="left:-26px;bottom:10px;width:120px;transform:rotate(18deg)" />
-    <img class="m-img" src="/flores/azahar.webp" alt="" style="right:-26px;bottom:0;width:140px" />
+    <img class="m-img" src="/flores/olivo.webp" alt="" style="width:112px;transform-origin:70.5% 100%;transform:rotate(40deg);left:-87px;bottom:34px" />
+    <img class="m-img" src="/flores/azahar.webp" alt="" style="width:125px;transform-origin:61.8% 100%;transform:rotate(-40deg);right:-56px;bottom:40px" />
     <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" xlink:href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
     <p class="m-title">Preguntas</p>
     <div id="m-faq-slot"></div>
