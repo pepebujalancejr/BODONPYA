@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pepe & Adri · 5 de Junio 2027</title>
-  <meta name="description" content="Nos casamos el 5 de junio de 2027. Ceremonia en Málaga y celebración en Cortijo Curiel, Antequera." />
+  <meta name="description" content="Nos casamos el 5 de junio de 2027. Ceremonia en la Catedral de Málaga y celebración en Cortijo Curiel, Antequera." />
   <meta property="og:title" content="Pepe & Adri · Boda 5 Junio 2027" />
-  <meta property="og:description" content="Nos casamos el 5 de junio de 2027. Ceremonia en Málaga y celebración en Cortijo Curiel, Antequera." />
+  <meta property="og:description" content="Nos casamos el 5 de junio de 2027. Ceremonia en la Catedral de Málaga y celebración en Cortijo Curiel, Antequera." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -242,6 +242,9 @@
     .hotel-link { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dark); border-bottom: 1px solid var(--dark); padding-bottom: 1px; transition: color 0.2s; }
     .hotel-link:hover { color: var(--gold); border-color: var(--gold); }
     .hotel-map { font-size: 0.7rem; color: var(--text-muted); }
+    .hotel-promo { display:flex; flex-direction:column; align-items:flex-start; gap:0.3rem; border:1px dashed var(--gold); border-radius:4px; padding:0.6rem 0.8rem; margin-bottom:1rem; background:rgba(196,151,62,0.07); }
+    .hotel-promo-lbl { font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); }
+    .hotel-promo-code { font-family:var(--serif); font-size:1.15rem; font-weight:600; color:var(--gold); letter-spacing:0.04em; }
 
     /* ── GIFTS ── */
 
@@ -499,12 +502,12 @@
       </div>
       <div style="display:flex;justify-content:space-between;margin-top:1rem;padding:0 1rem">
         <div style="text-align:left">
-          <p style="font-family:var(--serif);font-size:1rem;color:var(--dark)">Cortijo Curiel · <span style="color:var(--gold);font-style:italic">14:30 h</span></p>
+          <p style="font-family:var(--serif);font-size:1rem;color:var(--dark)">Cortijo Curiel · <span style="color:var(--gold);font-style:italic">19:00 h</span></p>
           <a href="https://maps.google.com/?q=Cortijo+Curiel+Antequera" target="_blank" style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);border-bottom:1px solid rgba(61,46,25,0.2)">Ver en Maps →</a>
         </div>
         <div style="text-align:right">
-          <p style="font-family:var(--serif);font-size:1rem;color:var(--dark)">Iglesia de Santiago Apóstol · <span style="color:var(--gold);font-style:italic">12:00 h</span></p>
-          <a href="https://maps.google.com/?q=Iglesia+Santiago+Apostol+Malaga" target="_blank" style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);border-bottom:1px solid rgba(61,46,25,0.2)">Ver en Maps →</a>
+          <p style="font-family:var(--serif);font-size:1rem;color:var(--dark)">Catedral de Málaga · <span style="color:var(--gold);font-style:italic">17:00 h</span></p>
+          <a href="https://maps.google.com/?q=Catedral+de+Malaga" target="_blank" style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);border-bottom:1px solid rgba(61,46,25,0.2)">Ver en Maps →</a>
         </div>
       </div>
     </div>
@@ -519,14 +522,16 @@
       <p class="section-desc" style="color:var(--gold)">Cada momento planificado con cariño para que podáis disfrutar sin preocupaciones.</p>
     </div>
     <div class="schedule-timeline" style="background:rgba(255,255,255,0.82);border-radius:10px;padding:2.5rem 3rem;max-width:680px;margin:0 auto" style="">
-      <div class="schedule-item"><p class="sch-time">11:00</p><div class="sch-dot"></div><div><p class="sch-event">Llegada de invitados</p><p class="sch-desc">Las puertas de la iglesia abren. Tiempo para saludarse y acomodarse.</p></div></div>
-      <div class="schedule-item"><p class="sch-time">12:00</p><div class="sch-dot"></div><div><p class="sch-event">Ceremonia religiosa</p><p class="sch-desc">Iglesia de Santiago Apóstol, Málaga.</p></div></div>
-      <div class="schedule-item"><p class="sch-time">13:15</p><div class="sch-dot"></div><div><p class="sch-event">Autobuses hacia Antequera</p><p class="sch-desc">Salida desde la Plaza de la Merced (Málaga) hacia Cortijo Curiel.</p></div></div>
-      <div class="schedule-item"><p class="sch-time">14:30</p><div class="sch-dot"></div><div><p class="sch-event">Cóctel de bienvenida</p><p class="sch-desc">Jardines de Cortijo Curiel, Antequera. Aperitivos y primer brindis.</p></div></div>
-      <div class="schedule-item"><p class="sch-time">16:00</p><div class="sch-dot"></div><div><p class="sch-event">Comida</p><p class="sch-desc">Un banquete para celebrar juntos en un entorno único.</p></div></div>
-      <div class="schedule-item"><p class="sch-time">18:30</p><div class="sch-dot"></div><div><p class="sch-event">Fiesta y barra libre</p><p class="sch-desc">DJ set. El baile que llevamos meses preparando. ¡A disfrutar!</p></div></div>
-      <div class="schedule-item"><p class="sch-time">23:00</p><div class="sch-dot"></div><div><p class="sch-event">Recena</p><p class="sch-desc">Un último regalo para recargar energías y seguir la fiesta.</p></div></div>
-      <div class="schedule-item"><p class="sch-time">00:30</p><div class="sch-dot"></div><div><p class="sch-event">Fin de la celebración</p><p class="sch-desc">Os queremos mucho. Conducid con cuidado o usad los autobuses de vuelta.</p></div></div>
+      <div class="schedule-item"><p class="sch-time">16:30</p><div class="sch-dot"></div><div><p class="sch-event">Llegada de invitados</p><p class="sch-desc">Las puertas de la Catedral abren. Tiempo para saludarse y acomodarse.</p></div></div>
+      <div class="schedule-item"><p class="sch-time">17:00</p><div class="sch-dot"></div><div><p class="sch-event">Ceremonia religiosa</p><p class="sch-desc">Catedral de Málaga.</p></div></div>
+      <div class="schedule-item"><p class="sch-time">18:30</p><div class="sch-dot"></div><div><p class="sch-event">Autobuses hacia Antequera</p><p class="sch-desc">Salida desde la Plaza de la Merced (Málaga) hacia Cortijo Curiel.</p></div></div>
+      <div class="schedule-item"><p class="sch-time">19:00</p><div class="sch-dot"></div><div><p class="sch-event">Cóctel de bienvenida</p><p class="sch-desc">Jardines de Cortijo Curiel, Antequera. Aperitivos y primer brindis.</p></div></div>
+      <div class="schedule-item"><p class="sch-time">20:45</p><div class="sch-dot"></div><div><p class="sch-event">Cena</p><p class="sch-desc">Un banquete para celebrar juntos en un entorno único.</p></div></div>
+      <div class="schedule-item"><p class="sch-time">22:15</p><div class="sch-dot"></div><div><p class="sch-event">Fiesta y barra libre</p><p class="sch-desc">DJ set. El baile que llevamos meses preparando. ¡A disfrutar!</p></div></div>
+      <div class="schedule-item"><p class="sch-time">00:30</p><div class="sch-dot"></div><div><p class="sch-event">Recena</p><p class="sch-desc">Un último regalo para recargar energías y seguir la fiesta.</p></div></div>
+      <div class="schedule-item"><p class="sch-time">02:00</p><div class="sch-dot"></div><div><p class="sch-event">Primer autobús de vuelta</p><p class="sch-desc">Salida desde Cortijo Curiel hacia Málaga.</p></div></div>
+      <div class="schedule-item"><p class="sch-time">03:15</p><div class="sch-dot"></div><div><p class="sch-event">Fin de la fiesta</p><p class="sch-desc">Os queremos mucho. Conducid con cuidado o usad los autobuses de vuelta.</p></div></div>
+      <div class="schedule-item"><p class="sch-time">04:00</p><div class="sch-dot"></div><div><p class="sch-event">Último autobús de vuelta</p><p class="sch-desc">Salida desde Cortijo Curiel hacia Málaga.</p></div></div>
     </div>
   </div>
 </section>
@@ -537,7 +542,7 @@
     <div class="text-center mb-lg">
       <span class="section-label" style="color:var(--gold-light)">Confirmación de asistencia</span>
       <h2 class="section-title" style="color:var(--dark)">¿Venís a la boda?</h2>
-      <p class="section-desc" style="color:var(--gold)">Por favor, confirma tu asistencia antes del<br><strong style="color:var(--gold)">5 de abril de 2027</strong></p>
+      <p class="section-desc" style="color:var(--gold)">Por favor, confirma tu asistencia antes del<br><strong style="color:var(--gold)">5 de junio de 2027</strong></p>
     </div>
     <div class="rsvp-card" style="background:rgba(255,255,255,0.88);border-radius:10px">
       <div id="rsvpSuccess" class="form-success">
@@ -585,9 +590,9 @@
               </div>
               <div class="form-group"><label class="form-label">Trayecto</label>
                 <select class="form-select" id="rsvp-bus-trayecto">
-                  <option value="Solo ida (13:15 h)">Solo ida · Salida 13:15 h desde Plaza de la Merced</option>
-                  <option value="Ida y vuelta 22:00 h">Ida y vuelta · Vuelta a las 22:00 h</option>
-                  <option value="Ida y vuelta 00:00 h">Ida y vuelta · Vuelta a las 00:00 h</option>
+                  <option value="Solo ida (18:30 h)">Solo ida · Salida 18:30 h desde Plaza de la Merced</option>
+                  <option value="Ida y vuelta 02:00 h">Ida y vuelta · Vuelta a las 02:00 h</option>
+                  <option value="Ida y vuelta 04:00 h">Ida y vuelta · Vuelta a las 04:00 h</option>
                 </select>
               </div>
             </div>
@@ -621,27 +626,29 @@
       <div class="" style="display:inline-block;padding:1.5rem 3rem;margin-bottom:2rem">
       <span class="section-label">Alojamiento</span>
       <h2 class="section-title">Dónde dormir</h2>
-      <p class="section-desc">Os recomendamos reservar con tiempo. Estos hoteles están en el centro de Málaga, cerca de la iglesia y del punto de salida de los autobuses.</p>
+      <p class="section-desc">Os recomendamos reservar con tiempo. Estos hoteles están en el centro de Málaga, cerca de la Catedral y del punto de salida de los autobuses.</p>
     </div>
     <div class="hotel-grid">
       <div class="hotel-card">
-        <span class="hotel-stars">★★★★</span>
-        <h3 class="hotel-name">Hotel Vincci Málaga</h3>
-        <p class="hotel-loc">Centro de Málaga</p>
-        <p class="hotel-desc">Hotel moderno y sofisticado en pleno centro de Málaga. Diseño contemporáneo, excelente ubicación y servicio de calidad.</p>
+        <span class="hotel-stars">★★★★★</span>
+        <h3 class="hotel-name">Gran Hotel Miramar</h3>
+        <p class="hotel-loc">Paseo de Reding, Málaga</p>
+        <p class="hotel-desc">Antiguo palacio de 1926 frente al mar, junto a La Malagueta. Elegancia clásica, jardines, piscina y spa a pocos minutos a pie del centro.</p>
+        <div class="hotel-promo"><span class="hotel-promo-lbl">10% de descuento</span><span class="hotel-promo-code">AdrianayPepe</span></div>
         <div class="hotel-links">
-          <a class="hotel-link" href="https://www.vinccihoteles.com" target="_blank">Ver disponibilidad →</a>
-          <a class="hotel-map" href="https://maps.google.com/?q=Hotel+Vincci+Malaga" target="_blank">📍 Mapa</a>
+          <a class="hotel-link" href="https://www.granhotelmiramarmalaga.com" target="_blank">Ver disponibilidad →</a>
+          <a class="hotel-map" href="https://maps.google.com/?q=Gran+Hotel+Miramar+Malaga" target="_blank">📍 Mapa</a>
         </div>
       </div>
       <div class="hotel-card">
-        <span class="hotel-stars">★★★</span>
-        <h3 class="hotel-name">ibis Málaga Centro</h3>
-        <p class="hotel-loc">Centro de Málaga</p>
-        <p class="hotel-desc">Opción cómoda y económica en el corazón de Málaga. Excelente relación calidad-precio, ideal para quienes buscan funcionalidad.</p>
+        <span class="hotel-stars">★★★★★</span>
+        <h3 class="hotel-name">Only YOU Hotel Málaga</h3>
+        <p class="hotel-loc">Alameda Principal, Málaga</p>
+        <p class="hotel-desc">Hotel de diseño en un edificio histórico del siglo XVIII, con azotea y vistas al puerto. En pleno centro, cerca de la Catedral.</p>
+        <div class="hotel-promo"><span class="hotel-promo-lbl">10% de descuento</span><span class="hotel-promo-code">AdrianayPepe</span></div>
         <div class="hotel-links">
-          <a class="hotel-link" href="https://all.accor.com" target="_blank">Ver disponibilidad →</a>
-          <a class="hotel-map" href="https://maps.google.com/?q=ibis+Malaga+Centro" target="_blank">📍 Mapa</a>
+          <a class="hotel-link" href="https://www.onlyyouhotels.com/hotel-malaga" target="_blank">Ver disponibilidad →</a>
+          <a class="hotel-map" href="https://maps.google.com/?q=Only+YOU+Hotel+Malaga" target="_blank">📍 Mapa</a>
         </div>
       </div>
       <div class="hotel-card">
@@ -677,8 +684,8 @@
     <p class="gifts-quote">"Vuestra presencia es el mejor regalo que podéis hacernos. Pero si queréis sumaros a nuestra nueva aventura y ayudarnos a escribir los próximos capítulos..."</p>
     <div class="gifts-card">
       <p class="gifts-card-title">Transferencia bancaria</p>
-      <span class="gifts-iban-label">IBAN</span>
-      <div class="gifts-iban">ES91 2100 0418 4502 0005 1332</div>
+      <span class="gifts-iban-label">Cuenta</span>
+      <div class="gifts-iban">PENDIENTE CUENTA DE AHORRO</div>
     </div>
   </div>
 </section>
@@ -698,7 +705,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">¿Habrá autobuses organizados?</span><span class="faq-icon">+</span></button>
-        <p class="faq-a">Sí. Ida: salida desde Plaza de la Merced (Málaga) a las 13:15 h. Vuelta: dos salidas desde Cortijo Curiel a las 22:00 h y 00:00 h dirección Málaga. Reservad vuestra plaza en el formulario del apartado de Transporte.</p>
+        <p class="faq-a">Sí. Ida: salida desde Plaza de la Merced (Málaga) a las 18:30 h, tras la ceremonia. Vuelta: dos salidas desde Cortijo Curiel a las 02:00 h y 04:00 h dirección Málaga. Reservad vuestra plaza en el formulario del apartado de Transporte.</p>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">¿Cuándo tengo que confirmar la asistencia?</span><span class="faq-icon">+</span></button>
@@ -706,15 +713,15 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">¿Cómo llego al Cortijo Curiel?</span><span class="faq-icon">+</span></button>
-        <p class="faq-a">Desde Málaga capital son unos 45 minutos por la A-45. También podéis usar el autobús organizado que sale de Plaza de la Merced a las 13:15 h tras la ceremonia.</p>
+        <p class="faq-a">Desde Málaga capital son unos 30 minutos aproximadamente por la A-45. También podéis usar el autobús organizado que sale de Plaza de la Merced a las 18:30 h tras la ceremonia.</p>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">¿A qué hora es la ceremonia?</span><span class="faq-icon">+</span></button>
-        <p class="faq-a">La ceremonia religiosa comienza a las 12:00 h en la Iglesia de Santiago Apóstol, Málaga. Os recomendamos llegar al menos 30 minutos antes. La duración es de aproximadamente 60 minutos.</p>
+        <p class="faq-a">La ceremonia religiosa comienza a las 17:00 h en la Catedral de Málaga. Os recomendamos llegar al menos 30 minutos antes. La duración es de aproximadamente 60 minutos.</p>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">¿Hay alojamiento recomendado?</span><span class="faq-icon">+</span></button>
-        <p class="faq-a">Sí. En el apartado de Alojamiento encontraréis nuestras recomendaciones de hoteles en el centro de Málaga, cerca de la iglesia y del punto de salida de los autobuses. Os recomendamos reservar cuanto antes.</p>
+        <p class="faq-a">Sí. En el apartado de Alojamiento encontraréis nuestras recomendaciones de hoteles en el centro de Málaga, cerca de la Catedral y del punto de salida de los autobuses. Os recomendamos reservar cuanto antes.</p>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">¿Habrá opciones vegetarianas y veganas?</span><span class="faq-icon">+</span></button>
@@ -722,7 +729,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">¿A qué hora salen los autobuses de vuelta?</span><span class="faq-icon">+</span></button>
-        <p class="faq-a">Hay dos salidas desde Cortijo Curiel hacia la Plaza de la Merced (Málaga): a las 22:00 h y a las 00:00 h. Reservad vuestra plaza en el formulario del apartado de Transporte.</p>
+        <p class="faq-a">Hay dos salidas desde Cortijo Curiel hacia la Plaza de la Merced (Málaga): a las 02:00 h y a las 04:00 h. Reservad vuestra plaza en el formulario del apartado de Transporte.</p>
       </div>
     </div>
     <div class="faq-contact">
@@ -770,7 +777,7 @@
 
   // Countdown
   function updateCountdown() {
-    var target = new Date('2027-06-05T12:00:00').getTime();
+    var target = new Date('2027-06-05T17:00:00').getTime();
     var now = Date.now();
     var diff = target - now;
     if (diff <= 0) return;
