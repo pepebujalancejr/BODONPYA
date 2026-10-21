@@ -427,6 +427,8 @@
       overflow-x: hidden;
     }
     .m-page { display: none; position: relative; overflow: hidden; min-height: 100vh; min-height: 100dvh; padding: 0 1.5rem 3rem; }
+    .m-page:not(#m-inicio) { padding-left: 2.6rem; padding-right: 2.6rem; }
+    #m-app #m-confirmacion, #m-app #m-preguntas, #m-app #m-programa { padding-left: 3.3rem; padding-right: 3.3rem; }
     .m-page.active { display: block; animation: mFade .45s ease; }
     @keyframes mFade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 
@@ -626,10 +628,10 @@
       <div class="schedule-item"><p class="sch-time">18:30</p><div class="sch-dot"></div><div><p class="sch-event">Autobuses hacia Antequera</p><p class="sch-desc">Salida desde la Plaza de la Merced (Málaga) hacia Cortijo Curiel.</p></div></div>
       <div class="schedule-item"><p class="sch-time">19:00</p><div class="sch-dot"></div><div><p class="sch-event">Cóctel de bienvenida</p><p class="sch-desc">Jardines de Cortijo Curiel, Antequera. Aperitivos y primer brindis.</p></div></div>
       <div class="schedule-item"><p class="sch-time">20:45</p><div class="sch-dot"></div><div><p class="sch-event">Cena</p><p class="sch-desc">Un banquete para celebrar juntos en un entorno único.</p></div></div>
-      <div class="schedule-item"><p class="sch-time">22:15</p><div class="sch-dot"></div><div><p class="sch-event">Fiesta y barra libre</p><p class="sch-desc">DJ set. El baile que llevamos meses preparando. ¡A disfrutar!</p></div></div>
-      <div class="schedule-item"><p class="sch-time">00:30</p><div class="sch-dot"></div><div><p class="sch-event">Recena</p><p class="sch-desc">Un último regalo para recargar energías y seguir la fiesta.</p></div></div>
+      <div class="schedule-item"><p class="sch-time">23:00</p><div class="sch-dot"></div><div><p class="sch-event">Fiesta y barra libre</p><p class="sch-desc">DJ set. El baile que llevamos meses preparando. ¡A disfrutar!</p></div></div>
+      <div class="schedule-item"><p class="sch-time">02:00</p><div class="sch-dot"></div><div><p class="sch-event">Recena</p><p class="sch-desc">Un último regalo para recargar energías y seguir la fiesta.</p></div></div>
       <div class="schedule-item"><p class="sch-time">02:00</p><div class="sch-dot"></div><div><p class="sch-event">Primer autobús de vuelta</p><p class="sch-desc">Salida desde Cortijo Curiel hacia Málaga.</p></div></div>
-      <div class="schedule-item"><p class="sch-time">03:15</p><div class="sch-dot"></div><div><p class="sch-event">Fin de la fiesta</p><p class="sch-desc">Os queremos mucho. Conducid con cuidado o usad los autobuses de vuelta.</p></div></div>
+      <div class="schedule-item"><p class="sch-time">04:00</p><div class="sch-dot"></div><div><p class="sch-event">Fin de la fiesta</p><p class="sch-desc">Os queremos mucho. Conducid con cuidado o usad los autobuses de vuelta.</p></div></div>
       <div class="schedule-item"><p class="sch-time">04:00</p><div class="sch-dot"></div><div><p class="sch-event">Último autobús de vuelta</p><p class="sch-desc">Salida desde Cortijo Curiel hacia Málaga.</p></div></div>
     </div>
   </div>
@@ -641,7 +643,7 @@
     <div class="text-center mb-lg">
       <span class="section-label" style="color:var(--gold-light)">Confirmación de asistencia</span>
       <h2 class="section-title" style="color:var(--dark)">¿Venís a la boda?</h2>
-      <p class="section-desc" style="color:var(--gold)">Por favor, confirma tu asistencia antes del<br><strong style="color:var(--gold)">5 de junio de 2027</strong></p>
+      <p class="section-desc" style="color:var(--gold)">Por favor, confirma tu asistencia antes del<br><strong style="color:var(--gold)">15 de mayo de 2027</strong></p>
     </div>
     <div class="rsvp-card" style="background:rgba(255,255,255,0.88);border-radius:10px">
       <div id="rsvpSuccess" class="form-success">
@@ -807,7 +809,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">¿Cuándo tengo que confirmar la asistencia?</span><span class="faq-icon">+</span></button>
-        <p class="faq-a">Necesitamos vuestra confirmación antes del 5 de junio de 2027. Esto nos ayuda a organizar el catering, los autobuses y la disposición de mesas con tiempo suficiente.</p>
+        <p class="faq-a">Necesitamos vuestra confirmación antes del 15 de mayo de 2027. Esto nos ayuda a organizar el catering, los autobuses y la disposición de mesas con tiempo suficiente.</p>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">¿Cómo llego al Cortijo Curiel?</span><span class="faq-icon">+</span></button>
@@ -957,8 +959,8 @@
   <section class="m-page" id="m-programa">
     <button class="m-back" onclick="mBack()" aria-label="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg></button>
     <img class="m-img" src="/flores/ramo-blanco.webp" alt="" style="right:-38px;top:-26px;width:128px;transform:rotate(200deg)" />
-    <img class="m-img" src="/flores/ramo-calas.webp" alt="" style="left:-50px;top:820px;width:150px;transform:rotate(58deg)" />
-    <img class="m-img" src="/flores/ramo-olivo.webp" alt="" style="right:-50px;top:520px;width:150px;transform:rotate(-58deg)" />
+    <img class="m-img" src="/flores/ramo-calas.webp" alt="" style="left:-44px;top:820px;width:150px;transform:rotate(58deg)" />
+    <img class="m-img" src="/flores/ramo-olivo.webp" alt="" style="right:-80px;top:520px;width:150px;transform:rotate(-58deg)" />
     <img class="m-img" src="/flores/ramo-calas.webp" alt="" style="left:-40px;bottom:-14px;width:185px;transform:rotate(14deg)" />
     <img class="m-img" src="/flores/ramo-biznaga.webp" alt="" style="right:-40px;bottom:-14px;width:185px;transform:rotate(-14deg)" />
     <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" xlink:href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
@@ -969,10 +971,10 @@
       <li><span class="t">18:30</span><div><p class="e">Autobuses a Antequera</p><p class="d">Desde la Plaza de la Merced</p></div></li>
       <li><span class="t">19:00</span><div><p class="e">Cóctel de bienvenida</p><p class="d">Jardines de Cortijo Curiel</p></div></li>
       <li><span class="t">20:45</span><div><p class="e">Cena</p></div></li>
-      <li><span class="t">22:15</span><div><p class="e">Fiesta y barra libre</p><p class="d">¡A bailar!</p></div></li>
-      <li><span class="t">00:30</span><div><p class="e">Recena</p></div></li>
+      <li><span class="t">23:00</span><div><p class="e">Fiesta y barra libre</p><p class="d">¡A bailar!</p></div></li>
+      <li><span class="t">02:00</span><div><p class="e">Recena</p></div></li>
       <li><span class="t">02:00</span><div><p class="e">Primer autobús de vuelta</p></div></li>
-      <li><span class="t">03:15</span><div><p class="e">Fin de la fiesta</p></div></li>
+      <li><span class="t">04:00</span><div><p class="e">Fin de la fiesta</p></div></li>
       <li><span class="t">04:00</span><div><p class="e">Último autobús de vuelta</p></div></li>
     </ul>
   </section>
@@ -981,25 +983,25 @@
   <section class="m-page" id="m-confirmacion">
     <button class="m-back" onclick="mBack()" aria-label="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg></button>
     <img class="m-img" src="/flores/ramo-biznaga.webp" alt="" style="right:-38px;top:-26px;width:128px;transform:rotate(200deg)" />
-    <img class="m-img" src="/flores/ramo-olivo.webp" alt="" style="left:-50px;top:330px;width:150px;transform:rotate(58deg)" />
-    <img class="m-img" src="/flores/ramo-calas.webp" alt="" style="right:-50px;top:640px;width:150px;transform:rotate(-58deg)" />
-    <img class="m-img" src="/flores/ramo-blanco.webp" alt="" style="left:-50px;top:960px;width:150px;transform:rotate(58deg)" />
-    <img class="m-img" src="/flores/ramo-biznaga.webp" alt="" style="right:-50px;top:1280px;width:150px;transform:rotate(-58deg)" />
-    <img class="m-img" src="/flores/ramo-olivo.webp" alt="" style="left:-50px;top:1600px;width:150px;transform:rotate(58deg)" />
+    <img class="m-img" src="/flores/ramo-olivo.webp" alt="" style="left:-98px;top:330px;width:150px;transform:rotate(58deg)" />
+    <img class="m-img" src="/flores/ramo-calas.webp" alt="" style="right:-44px;top:640px;width:150px;transform:rotate(-58deg)" />
+    <img class="m-img" src="/flores/ramo-blanco.webp" alt="" style="left:-74px;top:960px;width:150px;transform:rotate(58deg)" />
+    <img class="m-img" src="/flores/ramo-biznaga.webp" alt="" style="right:-62px;top:1280px;width:150px;transform:rotate(-58deg)" />
+    <img class="m-img" src="/flores/ramo-olivo.webp" alt="" style="left:-86px;top:1600px;width:150px;transform:rotate(58deg)" />
     <img class="m-img" src="/flores/ramo-calas.webp" alt="" style="left:-40px;bottom:-14px;width:185px;transform:rotate(14deg)" />
     <img class="m-img" src="/flores/ramo-olivo.webp" alt="" style="right:-40px;bottom:-14px;width:185px;transform:rotate(-14deg)" />
     <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" xlink:href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
     <p class="m-title">Confirmación</p>
-    <p class="m-note" style="text-align:center;margin:-.6rem 0 1.6rem">Por favor, confirmad antes del<br><b style="color:#C4973E">5 de junio de 2027</b></p>
+    <p class="m-note" style="text-align:center;margin:-.6rem 0 1.6rem">Por favor, confirmad antes del<br><b style="color:#C4973E">15 de mayo de 2027</b></p>
     <div id="m-rsvp-slot"></div>
   </section>
 
   <!-- ALOJAMIENTOS -->
   <section class="m-page" id="m-alojamientos">
     <button class="m-back" onclick="mBack()" aria-label="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg></button>
-    <img class="m-img" src="/flores/ramo-patio.webp" alt="" style="right:-38px;top:-26px;width:140px;transform:rotate(200deg)" />
+    <img class="m-img" src="/flores/ramo-patio.webp" alt="" style="right:-47px;top:-44px;width:140px;transform:rotate(200deg)" />
     <img class="m-img" src="/flores/ramo-blanco.webp" alt="" style="left:-50px;top:300px;width:150px;transform:rotate(58deg)" />
-    <img class="m-img" src="/flores/ramo-patio.webp" alt="" style="right:-50px;top:560px;width:150px;transform:rotate(-58deg)" />
+    <img class="m-img" src="/flores/ramo-patio.webp" alt="" style="right:-56px;top:560px;width:150px;transform:rotate(-58deg)" />
     <img class="m-img" src="/flores/ramo-olivo.webp" alt="" style="left:-50px;top:820px;width:150px;transform:rotate(58deg)" />
     <img class="m-img" src="/flores/ramo-patio.webp" alt="" style="left:-40px;bottom:-14px;width:185px;transform:rotate(14deg)" />
     <img class="m-img" src="/flores/ramo-olivo.webp" alt="" style="right:-40px;bottom:-14px;width:185px;transform:rotate(-14deg)" />
@@ -1049,9 +1051,9 @@
   <section class="m-page" id="m-preguntas">
     <button class="m-back" onclick="mBack()" aria-label="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg></button>
     <img class="m-img" src="/flores/ramo-calas.webp" alt="" style="right:-38px;top:-26px;width:128px;transform:rotate(200deg)" />
-    <img class="m-img" src="/flores/ramo-olivo.webp" alt="" style="right:-50px;top:300px;width:150px;transform:rotate(-58deg)" />
-    <img class="m-img" src="/flores/ramo-biznaga.webp" alt="" style="left:-50px;top:560px;width:150px;transform:rotate(58deg)" />
-    <img class="m-img" src="/flores/ramo-blanco.webp" alt="" style="right:-50px;top:820px;width:150px;transform:rotate(-58deg)" />
+    <img class="m-img" src="/flores/ramo-olivo.webp" alt="" style="right:-98px;top:300px;width:150px;transform:rotate(-58deg)" />
+    <img class="m-img" src="/flores/ramo-biznaga.webp" alt="" style="left:-62px;top:560px;width:150px;transform:rotate(58deg)" />
+    <img class="m-img" src="/flores/ramo-blanco.webp" alt="" style="right:-44px;top:820px;width:150px;transform:rotate(-58deg)" />
     <img class="m-img" src="/flores/ramo-olivo.webp" alt="" style="left:-40px;bottom:-14px;width:185px;transform:rotate(14deg)" />
     <img class="m-img" src="/flores/ramo-blanco.webp" alt="" style="right:-40px;bottom:-14px;width:185px;transform:rotate(-14deg)" />
     <svg class="m-arch" viewBox="0 0 360 165"><text class="names"><textPath href="#m-arc" xlink:href="#m-arc" startOffset="50%" text-anchor="middle">ADRIANA Y PEPE</textPath></text><text class="date" x="180" y="128" text-anchor="middle">5 · 6 · 2027</text></svg>
